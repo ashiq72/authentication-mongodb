@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-var encrypt = require("mongoose-encryption");
+// var encrypt = require("mongoose-encryption");
 
 const userSchema = mongoose.Schema({
   email: {
@@ -16,11 +16,11 @@ const userSchema = mongoose.Schema({
   },
 });
 
-var encKey = process.env.ENC_KEY;
+// var encKey = process.env.ENC_KEY;
 
-userSchema.plugin(encrypt, {
-  secret: encKey,
-  encryptedFields: ["password"],
-});
+// userSchema.plugin(encrypt, {
+//   secret: encKey,
+//   encryptedFields: ["password"],
+// });
 
 module.exports = mongoose.model("user", userSchema);
