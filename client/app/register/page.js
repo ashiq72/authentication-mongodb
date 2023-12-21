@@ -14,9 +14,9 @@ export default function Login() {
 
   const router = useRouter();
   const onSubmit = async (data) => {
-    console.log(data);
+    // console.log(data);
     try {
-      const res = await fetch("http://localhost:3000/", {
+      const res = await fetch("http://localhost:5000/register", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -25,9 +25,8 @@ export default function Login() {
       });
 
       if (res.ok) {
+        console.log("Data send done");
         reset(); // Reset the form
-
-        // router.push("/");
       } else {
         throw new Error("Failed to create a topic");
       }
