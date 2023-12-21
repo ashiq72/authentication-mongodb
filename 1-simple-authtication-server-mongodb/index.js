@@ -27,6 +27,21 @@ app.post("/register", async (req, res) => {
   }
 });
 
+app.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email: email });
+
+    if (user && user.password === password) {
+      res.status(200).json({ status: "Valid user" });
+    } else {
+      res.status(404).json({ status: "Not valid user" });
+    }
+  } catch (error) {
+    res.status(500).json(error.message);
+  }
+});
+
 app.listen(5000, () => {
   console.log("Server is running");
 });

@@ -36,7 +36,7 @@ export default function Login() {
   };
 
   return (
-    <div className="w-auto h-screen mx-auto flex justify-center items-center">
+    <div className="w-40 h-screen mx-auto flex justify-center items-center">
       <div className="bg-sky-500 p-5 rounded shadow-2xl">
         <h1 className="text-gray-200 text-3xl font-semibold pb-2">Register</h1>
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
